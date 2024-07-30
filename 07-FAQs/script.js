@@ -16,3 +16,20 @@ const dataArray = [
         detail: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis doloremque debitis aspernatur iusto molestias facilis itaque, perspiciatis tempore unde commodi eius. Distinctio ipsa numquam magni dolorum pariatur vel, explicabo accusantium?',
     }
 ];
+
+
+const makeHTML = data => {
+
+    return `<details>
+
+    <summary>${data.title}</summary>
+    <p>${data.detail}</p>
+    
+    </details>`
+
+}
+
+
+const containerEl = document.getElementById('faq-container')
+
+containerEl.innerHTML = dataArray.map(dataItem => makeHTML(dataItem)).join('')
